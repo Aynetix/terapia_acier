@@ -12,6 +12,6 @@ Drag and drop the terapia_acier folder into your server
 Start the resource folder by using ensure terapia_acier in your server.cfg
 
 📜 Licence
-Copyright (C) 2023 Epyi's Scripts
+Copyright (C) 2023 Térapia Scripts
 
 This program Is free software: you can redistribute it And/Or modify it under the terms Of the MIT License.
