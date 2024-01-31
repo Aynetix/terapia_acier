@@ -3,7 +3,10 @@ Config={}
 Config.tempsrecolteacier = 5
 Config.tempstraitementacier = 7
 Config.Quantityacier_aciertraite = 3
+Config.Quantityacier_aciervente = 3
+Config.tempsventeacier = 5
 Config.prixreventeacier = 2000
+
 
 
 Config.recolteacier = {
