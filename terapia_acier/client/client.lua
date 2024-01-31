@@ -1,4 +1,4 @@
-local player = GetPlayerPed(-1)
+local player = PlayerPedId()
 local coords = GetEntityCoords(PlayerPedId())
 
 print ("^5Crée par : aynetix") 
@@ -10,7 +10,7 @@ Citizen.CreateThread(function()
 	Citizen.Wait(0)
 		for k,v in pairs(Config.recolteacier) do
 		local coords = GetEntityCoords(PlayerPedId())
-		local player = GetPlayerPed(-1)
+		local player = PlayerPedId()
 	
 			if(GetDistanceBetweenCoords(coords, v.Pos.x, v.Pos.y, v.Pos.z, true) < 5.0) then
 				DrawMarker(2, v.Pos.x, v.Pos.y, v.Pos.z, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.5, 0.5, 0.5, 0, 254, 234, 170, 0, 1, 2, 0, nil, nil, 0)
@@ -27,7 +27,7 @@ Citizen.CreateThread(function()
 end)
 
 function recolteacier()
-local player = GetPlayerPed(-1)
+local player = PlayerPedId()
         ExecuteCommand('e kneel2')
 		exports["rs_prog"]:AfficherProgressbar(Config.tempsrecolteacier)
 		Citizen.Wait(Config.tempsrecolteacier * 1000)
@@ -57,7 +57,7 @@ Citizen.CreateThread(function()
 end)
 
 function traitementacier()
-local player = GetPlayerPed(-1)
+local player = PlayerPedId()
         ExecuteCommand('e parkingmeter')
 		exports["rs_prog"]:AfficherProgressbar(Config.tempstraitementacier)
 		Citizen.Wait(Config.tempstraitementacier * 1000)
