@@ -36,21 +36,17 @@ AddEventHandler('terapia_acier:giveaciertraité', function()
     end
 end)
 
-RegisterServerEvent('terapia_acier:reventeacier')
-AddEventHandler('terapia_acier:reventeacier', function()
-	local item = "aciertraité"
-    local limiteitem = 50
+RegisterNetEvent('terapia_acier:venteacier')
+AddEventHandler('terapia_acier:venteacier', function()
     local xPlayer = ESX.GetPlayerFromId(source)
-    local nbitemdansinventaire = xPlayer.getInventoryItem(item).count
-    local Quantity_acier = xPlayer.getInventoryItem(item).count
+    local Quantity_acier = xPlayer.getInventoryItem('aciertraité').count
+	local Quantityacier_aciervente = Config.Quantityacier_aciervente
 	local Prixacier = Config.prixreventeacier
-	
-	if Quantity_acier >= 1 then
-		
-			xPlayer.removeInventoryItem(item, 1)
-			xPlayer.addAccountMoney('money', Prixacier)
-		
-	else
-		TriggerClientEvent('esx:showNotification', source, ('vous n\'avez pas d acier traité a reventre'))
+
+	if Quantity_acier >= Quantityacier_aciervente then
+			xPlayer.removeInventoryItem('aciertraité', Quantityacier_aciervente)
+	        xPlayer.addAccountMoney('money', Prixacier)
+    else
+		TriggerClientEvent('esx:showNotification', source, ('vous n\'avez pas d\' acier sur vous. ~b~il t\'en faut '.. Quantityacier_aciervente..' acier au total'))
     end
 end)
