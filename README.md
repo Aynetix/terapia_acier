@@ -1,6 +1,6 @@
 mon discord: https://discord.gg/48p6XeVPMt
 
-Fivem sript acier by cesar
+Fivem sript acier by aynetix
 
 💾 Dependencies
 rs_prog
